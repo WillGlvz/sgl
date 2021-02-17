@@ -1,0 +1,237 @@
+@font-face { 
+	font-family: 'Poiret One'; 
+	font-style: cursive; 
+	font-weight: normal; 
+	src: url(http://localhost/SGL/ttf/PoiretOne-Regular.ttf) format("truetype"); 
+}
+
+@font-face { 
+	font-family: 'Open Sans'; 
+	font-style: sans-serif; 
+	font-weight: normal; 
+	src: url(http://localhost/SGL/ttf/OpenSans-Semibold.ttf) format("truetype"); 
+}
+
+@font-face { 
+	font-family: 'Pacifico'; 
+	font-style: cursive; 
+	font-weight: normal; 
+	src: url(http://localhost/SGL/ttf/Pacifico.ttf) format("truetype"); 
+}
+
+@font-face {
+	font-family: 'Josefin Sans';
+	font-style: sans-serif;
+	font-weight:
+	normal;
+	src: url(http://localhost/SGL/ttf/JosefinSans-Regular.ttf) format("truetype");
+ }
+
+ @font-face {
+	font-family: 'Cabin Condensed';
+	font-style: sans-serif;
+	font-weight:
+	normal;
+	src: url(http://localhost/SGL/ttf/CabinCondensed-SemiBold.ttf) format("truetype");
+ }
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.footer{
+	font-family: 'Poiret One', cursive;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 50px;
+	background: black;
+	color: white;
+	height: 25px;
+}
+
+.laabel {
+    display:inline-block;
+    width:120px;
+}
+
+.iinput:focus{
+	background: #fff;
+	border:1px solid #555;
+	box-shadow: 0 0 3px #aaa;
+	padding-right:10px;
+	-moz-transition: 1s; 
+    -webkit-transition: 1s; 
+  	-o-transition: 1s; 
+  	transition: 1s;
+}
+
+.iinput {
+    height: 30px;
+	width: 240px;
+	margin: 0.5em auto;
+	padding:5px 8px;
+	border: 1px
+	solid #aaa;
+	box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+	border-radius:2px;
+	color: #888;
+	font-size: 13px;
+}
+
+.iinput:required:valid{
+	box-shadow: 0 0 5px #5cd053; 
+  	border-color: #28921f;
+}
+
+.iinput:focus:invalid{
+	box-shadow: 0 0 5px #d45252; 
+  	border-color: #b03535
+}
+
+.iner{
+	transition: .7s;
+}
+
+.iner:hover{
+	padding: 20px;
+	transition: .7s;
+}
+
+.espa{
+	margin-top: 10px;
+}
+
+.fon3{
+	background: url(../../../img/despre.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.fondocontra{
+	background: url(../../../img/cambiarcontra.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.fonadm{
+	background: url(../../../img/adminlogin.jpeg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.welcome{
+	background: url(../img/bienvenida.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+#particles-js{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background: rgba(0,0,0,.5);
+}
+
+.letra5{
+	font-family: 'Pacifico'; 
+	font-style: cursive;
+	font-size: 2em;	
+}
+
+.letra4{
+	font-family: 'Josefin Sans';
+	font-style: sans-serif;
+	font-size: 1.5em;	
+}
+
+.letra4x{
+	font-family: 'Josefin Sans';
+	font-style: sans-serif;
+	font-size: 2.3em;	
+}
+
+.titulo{
+	font-family: 'Pacifico'; 
+	font-style: cursive;
+	font-size: 5em;	
+}
+
+.subtitulo{
+	font-family: 'Cabin Condensed';
+	font-style: sans-serif;
+	font-size: 1.5em;	
+}
+
+.subtitulo2{
+	font-family: 'Cabin Condensed';
+	font-style: sans-serif;
+	font-size: 2em;	
+}
+
+.sleep1{
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #5DDBF5 !important; 
+	background-color: transparent;
+	font-weight: 700;
+}
+
+.navbar-toggle {
+	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+	background-color: #5DDBF5;
+	border-color: #5DDBF5;
+}
+
+.navbar-default .navbar-toggle:hover>.icon-bar {
+	background-color: #FFF;
+}
+
+.on {
+	background-color: #222222 !important;
+	padding: 0 !important;
+}
+
+#mn-menu{
+	padding: 10px;
+	-webkit-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+#mn-menu.navbar-default {
+	background-color: rgb(60, 141, 188);
+	border-color: rgba(231, 231, 231, 0);
+}
+
+#mn-menu a.navbar-brand {
+	font: Georgia;
+	font-size: 22px;
+	color: #fff;
+	font-weight: 900;
+}
+
+#mn-menu.navbar-default .navbar-nav > li > a {
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 1px;
+}

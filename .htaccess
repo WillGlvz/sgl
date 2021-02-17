@@ -1,0 +1,83 @@
+<Files ~ "^\.(htaccess|htpasswd|css)$">
+	deny from all
+	order deny,allow
+</Files>
+AddDefaultCharset utf-8  
+php_value zlib.output_compression 16386 
+Options -Indexes
+Options +FollowSymlinks 
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp|zip)$ - [F,NC]
+RewriteRule ^/$ index.php [L]
+RewriteRule ^not-found$ php/backend/security/notfound.php [L]
+RewriteRule ^desprendimientos$ php/backend/login/desprendimiento.php [L]
+RewriteRule ^admin-login-system-sgl$ php/backend/security/adminlogin.php [L]
+RewriteRule ^admin/cpanel$ php/backend/principal/index.php [L]
+RewriteRule ^admin/log-out$ php/backend/login/cerrar.php [L]
+RewriteRule ^admin/cpanel/userprofiles$ php/backend/mnt_tipoadmin/index.php [L]
+RewriteRule ^admin/cpanel/userprofiles-report$ php/backend/mnt_tipoadmin/reporte.php [L]
+RewriteRule ^admin/cpanel/enterprise$ php/backend/mnt_empresas/index.php [L]
+RewriteRule ^admin/cpanel/users$ php/backend/mnt_admin/index.php [L]
+RewriteRule ^admin/cpanel/dm-number$ php/backend/mnt_dm/index.php [L]
+RewriteRule ^admin/cpanel/freight$ php/backend/mnt_merc/index.php [L]
+RewriteRule ^admin/cpanel/freight/new$ php/backend/mnt_merc/nueva.php [L]
+RewriteRule ^admin/cpanel/freight-kinds$ php/backend/mnt_tipom/index.php [L]
+RewriteRule ^admin/cpanel/frontend-slider$ php/backend/mnt_frontend/slider.php [L]
+RewriteRule ^admin/cpanel/frontend-description$ php/backend/mnt_frontend/seccion_empresa.php [L]
+RewriteRule ^admin/cpanel/frontend-strategy$ php/backend/mnt_frontend/seccion_estrategia.php [L]
+RewriteRule ^admin/cpanel/frontend-services$ php/backend/mnt_frontend/seccion_servicios.php [L]
+RewriteRule ^admin/cpanel/frontend-update-mision$ php/backend/mnt_frontend/uptdate_estrategia.php [L]
+RewriteRule ^admin/cpanel/frontend-update-vision$ php/backend/mnt_frontend/uptdate_estrategia2.php [L]
+RewriteRule ^admin/cpanel/frontend-update-valores$ php/backend/mnt_frontend/update_valores.php [L]
+RewriteRule ^admin/cpanel/update-password$ php/backend/mnt_admin/cambiar_contra.php [L]
+RewriteRule ^admin/welcome$ php/backend/principal/bienvenida.php [L]
+RewriteRule ^desprendimientos/empresas$ php/backend/enterprise/index.php [L]
+RewriteRule ^desprendimientos/empresas/log-out$ php/backend/login/cerrar2.php [L]
+RewriteRule ^admin/cpanel/freight/(.*)$ php/backend/mnt_merc/mercancias.php?dm=$1 [L]
+RewriteRule ^admin/cpanel/update-img/(.*)$ php/backend/mnt_admin/modificar_img.php?id=$1 [L]
+RewriteRule ^admin/cpanel/adminprofiles/(.*)$ php/backend/mnt_tipoadmin/scrud/read.php?id=$1 [L]
+RewriteRule ^admin/cpanel/frontend-update-slider/(.*)$ php/backend/mnt_frontend/update_slider.php?id=$1 [L]
+<IfModule mod_deflate.c> 
+	AddOutputFilterByType DEFLATE text/plain 
+	AddOutputFilterByType DEFLATE text/html 
+	AddOutputFilterByType DEFLATE text/xml 
+	AddOutputFilterByType DEFLATE text/css 
+	AddOutputFilterByType DEFLATE text/javascript 
+	AddOutputFilterByType DEFLATE application/xml 
+	AddOutputFilterByType DEFLATE application/xhtml+xml 
+	AddOutputFilterByType DEFLATE application/rss+xml 
+	AddOutputFilterByType DEFLATE application/atom_xml 
+	AddOutputFilterByType DEFLATE application/javascript 
+	AddOutputFilterByType DEFLATE application/x-javascript 
+	AddOutputFilterByType DEFLATE application/x-shockwave-flash 
+</IfModule>
+<ifmodule mod_expires.c> 
+	ExpiresActive On 
+	ExpiresDefault A604800 
+	<filesmatch ".(jpg|JPG|gif|GIF|png|PNG|css|CSS|ico|ICO|js|JS|otf|woff|ttf)$"> 
+		ExpiresDefault "access plus 7 day" 
+	</filesmatch> 
+</ifmodule> 
+ErrorDocument 400 http://localhost/SGL/not-found
+ErrorDocument 401 http://localhost/SGL/not-found
+ErrorDocument 402 http://localhost/SGL/not-found
+ErrorDocument 403 http://localhost/SGL/not-found
+ErrorDocument 404 http://localhost/SGL/not-found
+ErrorDocument 405 http://localhost/SGL/not-found
+ErrorDocument 406 http://localhost/SGL/not-found
+ErrorDocument 407 http://localhost/SGL/not-found
+ErrorDocument 408 http://localhost/SGL/not-found
+ErrorDocument 409 http://localhost/SGL/not-found
+ErrorDocument 410 http://localhost/SGL/not-found
+ErrorDocument 411 http://localhost/SGL/not-found
+ErrorDocument 412 http://localhost/SGL/not-found
+ErrorDocument 413 http://localhost/SGL/not-found
+ErrorDocument 414 http://localhost/SGL/not-found
+ErrorDocument 500 http://localhost/SGL/not-found
+ErrorDocument 501 http://localhost/SGL/not-found
+ErrorDocument 502 http://localhost/SGL/not-found
+ErrorDocument 503 http://localhost/SGL/not-found
+ErrorDocument 504 http://localhost/SGL/not-found
+ErrorDocument 505 http://localhost/SGL/not-found 

@@ -1,0 +1,86 @@
+<?php  
+	session_start();
+	include '../maestros/conexion.php';
+	include '../librerias/fpdf.php';
+	date_default_timezone_set("America/El_Salvador");
+	$cn = new Database();
+	$report = new FPDF();
+	$report->AddFont('Poiret One','','PoiretOne-Regular.php');
+	$report->AddFont('Pacifico','','Pacifico.php');
+	$report->AddFont('Open Sans','','OpenSans-Semibold.php');
+	$report->AddFont('Josefin Sans','','JosefinSans-Regular.php');
+	$report->AddPage();
+	$report->SetMargins(15, 15 , 15);
+	$report->SetAutoPageBreak(true, 15); 
+	$report->Image('../img/logo_report.png', 10, 7, 60, 30, 'PNG');
+	$report->SetFont('Poiret One','', 25);
+	$report->Cell(60, 10, '', 0);
+	$report->Cell(90, 20, utf8_decode('Servicios Globales Logísticos'), 0);
+	$report->Ln(20);
+	$report->SetFont('Josefin Sans','', 25);
+	$report->Cell(32, 10, '', 0);
+	$report->Cell(90, 20, utf8_decode('Reporte individual de empresas'), 0);
+	$report->Ln(20);
+	$report->SetFont('Josefin Sans', '', 12);
+	$report->Cell(50, 10, 'Reporte generado por: '.$_SESSION['nombre'], 0);
+	$report->Ln(15);
+    $report->SetDrawColor(4,0,181);
+    $report->SetLineWidth(.3);
+	$report->SetFont('Open Sans', '', 9);
+	$report->Cell(90, 8, utf8_decode('Datos'), 1, 0, 'C');
+	$report->Cell(90, 8, utf8_decode('Detalle'), 1, 0, 'C');
+	$report->Ln(8);
+	$report->SetFont('Josefin Sans', '', 10);
+	$st = $cn->prepare("SELECT id_empresa, nombre_empresa, descripcion_empresa, direccion_empresa, telefono_empresa, 
+		correo_empresa, nit_empresa, nrc_empresa, contacto_empresa, telf_contacto_empresa, 
+		correo_contacto_empresa, nombre_tipo_usuario, nombre_departamento, nombre_municipio FROM empresas e 
+		INNER JOIN municipios m INNER JOIN departamentos d INNER JOIN tipos_usuarios t ON e.id_tipo_usuario=
+		t.id_tipo_usuario AND e.id_municipio=m.id_municipio AND m.id_departamento=d.id_departamento WHERE 
+		id_empresa = ?");
+	$st->bindParam(1, $_GET['id']);
+	$st->execute();
+	$resultado = $st->fetch();
+	$report->Cell(90, 8, utf8_decode('Código'), 1, 0, 'C');
+	$report->Cell(90, 8, utf8_decode($resultado['id_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Nombre'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['nombre_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Descripción'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['descripcion_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Dirección'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['direccion_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Télefono'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['telefono_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Correo'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['correo_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('NIT'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['nit_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('NRC'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['nrc_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Contacto'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['contacto_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Télefono contacto'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['telf_contacto_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Correo contacto'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['correo_contacto_empresa']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Departamento'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['nombre_departamento']), 1, 0, 'C');
+	$report->Ln(8);
+	$report->Cell(90, 8, utf8_decode('Municipio'), 1, 0, 'C');
+	$report->Cell(90, 8, html_entity_decode($resultado['nombre_municipio']), 1, 0, 'C');
+	$report->Ln(15);
+	$report->Cell(60,10,'Fecha: '.date("d-m-Y"),0,0,'C');
+	$report->Cell(60,10,utf8_decode('Página ').$report->PageNo(),0,0,'C');
+	$report->Cell(60,10,'Hora: '.date("H:i:s"),0,0,'C');
+	$report->Output();
+?>

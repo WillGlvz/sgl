@@ -1,0 +1,270 @@
+/* 
+								▒█▄░▒█ █▀▀█ 　 █▀▀█ █▀▀█ █▀▀▄ █▀▀█ █▀▀█ █▀▀█ █▀▀ 　 
+								▒█▒█▒█ █░░█ 　 █▄▄▀ █░░█ █▀▀▄ █▄▄█ █▄▄▀ █▄▄█ ▀▀█ 　 
+								▒█░░▀█ ▀▀▀▀ 　 ▀░▀▀ ▀▀▀▀ ▀▀▀░ ▀░░▀ ▀░▀▀ ▀░░▀ ▀▀▀ 　 
+
+								█▀▀ █░░ 　 █▀▀ █▀▀█ █▀▀▄ ░▀░ █▀▀▀ █▀▀█ 　 █▀▀▄ █▀▀ 
+								█▀▀ █░░ 　 █░░ █░░█ █░░█ ▀█▀ █░▀█ █░░█ 　 █░░█ █▀▀ 
+								▀▀▀ ▀▀▀ 　 ▀▀▀ ▀▀▀▀ ▀▀▀░ ▀▀▀ ▀▀▀▀ ▀▀▀▀ 　 ▀▀▀░ ▀▀▀ 
+
+								▀▀█▀▀ █░░█ 　 █▀▀█ █▀▀█ █▀▀█ ░░▀ ░▀░ █▀▄▀█ █▀▀█ 
+								░░█░░ █░░█ 　 █░░█ █▄▄▀ █░░█ ░░█ ▀█▀ █░▀░█ █░░█ 
+								░░▀░░ ░▀▀▀ 　 █▀▀▀ ▀░▀▀ ▀▀▀▀ █▄█ ▀▀▀ ▀░░░▀ ▀▀▀▀ 
+*/
+@font-face { 
+	font-family: 'Poiret One'; 
+	font-style: cursive; 
+	font-weight: normal; 
+	src: url(../ttf/PoiretOne-Regular.ttf) format("truetype"); 
+}
+
+@font-face { 
+	font-family: 'Open Sans'; 
+	font-style: sans-serif; 
+	font-weight: normal; 
+	src: url(../ttf/OpenSans-Semibold.ttf) format("truetype"); 
+}
+
+@font-face { 
+	font-family: 'Pacifico'; 
+	font-style: cursive; 
+	font-weight: normal; 
+	src: url(../ttf/Pacifico.ttf) format("truetype"); 
+}
+
+/* Se usa para quitarle los bordes por defecto que ya tra el navegador*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* Se definen las propiedades de las etiquetas HTML*/
+
+body, html{
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+	color: #5a5a5a;
+}
+
+label {
+	color: #fff;
+	float: left;
+	font-size: 12px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Se definen las clases*/
+.color{
+	color: #5DDBF5;
+}
+
+.fon{
+	background: url(../img/contacto.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+
+}
+
+.fon2{
+	background-color: #464646;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+.letraa{
+	font-family: 'Poiret One', cursive;
+	font-size: 1.5em;
+}
+
+.letraa2{
+	font-family: 'Poiret One', cursive;
+	font-size: 3.5em;
+}
+
+.letraa3{
+	font-family: 'Pacifico', cursive;
+	font-size: 1.8em;
+}
+
+.letra4{
+	font-family: 'Poiret One', cursive;
+	font-size: 1.4em;	
+}
+
+.letra5{
+	font-family: 'Poiret One', cursive;
+	font-size: 2.4em;	
+}
+
+.linea{
+	border-top: 4px solid #5DDBF5;
+	height: 10px;
+	width: 150px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+	color: #5DDBF5 !important; 
+	background-color: transparent;
+	font-weight: 700;
+}
+
+.navbar-toggle {
+	border-radius: 0;
+}
+
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+	background-color: #5DDBF5;
+	border-color: #5DDBF5;
+}
+
+.navbar-default .navbar-toggle:hover>.icon-bar {
+	background-color: #FFF;
+}
+
+.on {
+	background-color: #222222 !important;
+	padding: 0 !important;
+}
+
+.parra{
+	font-family: 'Open Sans', sans-serif;
+}
+
+.parrax{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.5em;
+}
+
+.planif{
+	background: url(../img/planificacion.jpg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+}
+
+.position{
+	position: relative;
+}
+
+.visible{
+	opacity: 1;
+}
+
+.spacio{
+	padding-left: 85px;
+}
+
+.spacio2{
+	padding-left: 46px;
+}
+
+.spacio3{
+	margin-right: 10px;
+}
+
+.ta{
+	font-size: 1.3em;
+}
+
+/* Se definen los id's de las secciones del header*/
+#mn-menu{
+	padding: 10px;
+	-webkit-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	transition: all 0.8s;
+}
+
+#mn-menu.navbar-default {
+	background-color: rgba(00, 00, 00, .5);
+	border-color: rgba(231, 231, 231, 0);
+}
+
+#mn-menu a.navbar-brand {
+	font: Georgia;
+	font-size: 22px;
+	color: #fff;
+	font-weight: 900;
+}
+
+#mn-menu.navbar-default .navbar-nav > li > a {
+	text-transform: uppercase;
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+#mn-estrategia .overlay{
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
+	background-attachment: fixed;
+}
+
+#mn-contacto .overlay{
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.73) 17%, rgba(0,0,0,0.66) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.4) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.8)), color-stop(17%,rgba(0,0,0,0.73)), color-stop(35%,rgba(0,0,0,0.66)), color-stop(62%,rgba(0,0,0,0.55)), color-stop(100%,rgba(0,0,0,0.4))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.73) 17%,rgba(0,0,0,0.66) 35%,rgba(0,0,0,0.55) 62%,rgba(0,0,0,0.4) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#66000000',GradientType=0 ); /* IE6-9 */
+	background-attachment: fixed;
+}
+
+#mn-contacto .form-control {
+	display: block;
+	width: 100%;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 4px solid #fff;
+	border-radius: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+}
+
+#mn-contacto .form-control:focus {
+	border-color: #5DDBF5;
+	outline: 0;
+	-webkit-box-shadow: transparent;
+	box-shadow: transparent;
+}
+
+#mn-home p.lead{
+	color: #e3e3e3;
+}
+
+#particles-js{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background: rgba(0,0,0,.5);
+}
+
+#mn-servicios .container{
+    -moz-transition: 2s;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+}
